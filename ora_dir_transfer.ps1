@@ -1,4 +1,4 @@
-# CREATED: Alexey Anisimov https://anilech.github.io/
+# CREATED: https://anile.ch/
 # PURPOSE: transfer files to and from Oracle database directories.
 # PARAMETERS:
 #  -get: transfer data from the remote database to the local file
