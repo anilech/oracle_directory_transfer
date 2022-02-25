@@ -6,11 +6,11 @@ function usage() {
   ctx.write("usage: script sqlcl_ora_dir_download.js -d <ORACLE_DIRECTORY> -f <file> [-m] [-o]\n");
   ctx.write("  -d|--directory - oracle directory\n");
   ctx.write("  -f|--file      - filename\n");
-  ctx.write("  -m|--move      - delete source file after transfer\n");
+  // not implemented yet... ctx.write("  -m|--move      - delete source file after transfer\n");
   ctx.write("  -o|--overwrite - overwrite local file if exists\n\n");  
-  ctx.write("database permissions:\n");
+  ctx.write("required database permissions:\n");
   ctx.write("  create session + read on directory\n");
-  ctx.write("  -m: execute on utl_file + write on directory\n\n");
+  // ctx.write("  -m: execute on utl_file + write on directory\n\n");
 }
 
 function main() {
