@@ -1,7 +1,7 @@
 "use strict";
 
 function usage() {
-  ctx.write("usage: script "+args[0]+" -d <ORACLE_DIRECTORY> -f <file> [-m] [-o]\n");
+  ctx.write("usage: script sqlcl_ora_dir_download.js -d <ORACLE_DIRECTORY> -f <file> [-m] [-o]\n");
   ctx.write("  -d|--directory - oracle directory\n");
   ctx.write("  -f|--file      - filename\n");
   ctx.write("  -m|--move      - delete source file after transfer\n");
