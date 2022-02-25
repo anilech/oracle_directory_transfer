@@ -1,3 +1,5 @@
+// download files from oracle directory
+// script for sqlcl (https://www.oracle.com/database/technologies/appdev/sqlcl.html)
 "use strict";
 
 function usage() {
