@@ -24,7 +24,7 @@ c:\> powershell -executionpolicy bypass -file "ora_dir_transfer.ps1" ^
 This will copy the dump.dmp from the DATA_PUMP_DIR to the c:\temp
 
 #### Mandatory parameters are:
-`-get` | `-put`: download the `-file <filename>` from db or upload the file to db  
+`-get` | `-put`: download the `-file <filename>` from the DB or upload the file to the DB  
 `-ora_dir`: oracle directory name, check the [ALL_DIRECTORIES](https://docs.oracle.com/en/database/oracle/oracle-database/19/refrn/ALL_DIRECTORIES.html) view if unsure.  
 `-database`: connection string to the DB.  
 `-username`: db credentials. (user/password)  
