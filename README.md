@@ -23,12 +23,12 @@ c:\> powershell -executionpolicy bypass -file "ora_dir_transfer.ps1" ^
  -username system/manager
 ```
 
-Mandatory parameters are:
--get | -put: download file from db | upload file to db
--ora_dir: oracle directory name, check the ALL_DIRECTORIES view if unsure.
--database: connection string to the DB.
--username: db credentials. (user/password)
-Optional parameters are:
--move: delete source file after the transfer
--force: owerwrite existing files
+#### Mandatory parameters are:
+-get | -put: download file from db | upload file to db  
+-ora_dir: oracle directory name, check the ALL_DIRECTORIES view if unsure.  
+-database: connection string to the DB.  
+-username: db credentials. (user/password)  
+Optional parameters are:  
+-move: delete source file after the transfer  
+-force: owerwrite existing files  
 
