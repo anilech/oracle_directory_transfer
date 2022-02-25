@@ -12,23 +12,23 @@ It is a powershell script [ora_dir_transfer.ps1](https://github.com/anilech/orac
 It is influenced by [this perl script](https://stackoverflow.com/questions/29431398/perl-script-to-download-raw-files-from-amazon-oracle-rds).
 You may need to fix Oracle dll path on the "[Reflection.Assembly]::LoadFile" line.
 
-Run it like this:
-
+#### Run it like this:
 ```
 c:\> powershell -executionpolicy bypass -file "ora_dir_transfer.ps1" ^
  -get ^
- -file c:\oracle\dump.dmp ^
+ -file c:\temp\dump.dmp ^
  -ora_dir DATA_PUMP_DIR ^
  -database mydbhost/orcl ^
  -username system/manager
 ```
+This will copy the dump.dmp from the DATA_PUMP_DIR to the c:\temp
 
 #### Mandatory parameters are:
--get | -put: download file from db | upload file to db  
--ora_dir: oracle directory name, check the ALL_DIRECTORIES view if unsure.  
--database: connection string to the DB.  
--username: db credentials. (user/password)  
+`-get` | `-put`: download the `-file <filename>` from db or upload the file to db  
+`-ora_dir`: oracle directory name, check the [ALL_DIRECTORIES](https://docs.oracle.com/en/database/oracle/oracle-database/19/refrn/ALL_DIRECTORIES.html) view if unsure.  
+`-database`: connection string to the DB.  
+`-username`: db credentials. (user/password)  
 Optional parameters are:  
--move: delete source file after the transfer  
--force: owerwrite existing files  
+`-move`: delete source file after the transfer  
+`-force`: owerwrite existing files  
 
