@@ -1,12 +1,14 @@
 # oracle_directory_transfer
 #### uploads or downloads files to/from oracle database directory
+* [ora_dir_transfer.ps1](#powershell-script-ora_dir_transferps1)
+* [ora_dir_transfer.ps1](#powershell-script-ora_dir_transferps1)
 
 Sometimes you may need to copy files from or to the Oracle directory.
 It is easy when you have direct access to the database server's file system.
 It is a little bit tricky when you don't (AWS RDS instance for example).
 One way to accomplish this is to create database link between the existing database (the one you have access to) and the target db 
  and use [DBMS_FILE_TRANSFER](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_FILE_TRANSFER.html) package to copy files between instances.
-
+---
 ### powershell script: ora_dir_transfer.ps1
 
 Here is another solution which doesn't require the second database.
@@ -33,4 +35,37 @@ This will copy the dump.dmp from the DATA_PUMP_DIR to the c:\temp
 Optional parameters are:  
 `-move`: delete source file after the transfer  
 `-force`: owerwrite existing files  
+---
+### sqlcl script: sqlcl_ora_dir_download.js
+The [sqlcl](https://www.oracle.com/database/technologies/appdev/sqlcl.html) is the new fat sqlplus written in java, therefore it supports a bunch of platforms.
+It also runs javascript natively, so it is possible to create quite powerfull scripts.
+The [sqlcl_ora_dir_download.js](https://github.com/anilech/oracle_directory_transfer/blob/f8931b5d059b79015950ef79ff66080c8c89390f/sqlcl_ora_dir_download.js)
+script works in a download-mode only, but it doesn't require the UTL_FILE's grant.
 
+To use the script you need to connect to the database with the SQLcl first. Options are:
+ `-d` or `--directory` - oracle directory to download from
+ `-f` or `--file`      - filename to download
+ `-m` or `--move`      - delete source file after the transfer
+ `-o` or `--overwrite` - overwrite local file if it exists
+
+examples:
+```
+C:\>sql /nolog
+SQLcl: Release 21.4 Production on Tue Mar 01 21:28:27 2022
+
+Copyright (c) 1982, 2022, Oracle.  All rights reserved.
+
+SQL> connect usr@db
+Password? (**********?) ***
+Connected.
+SQL> script sqlcl_ora_dir_download.js -d ORADIR -f dump.dmp
+OK: dump.dmp (152219648 bytes in 3.9 secs, 36.83 MB/s)
+SQL> exit
+```
+
+It is impossible to run it from command line using standard `@` option. So if you need to run it that way, you can use pipe:
+```
+C:\>echo script sqlcl_ora_dir_download.js -d ORADIR -f dump.dmp -o | sql -l -s usr/pwd@db
+
+OK: dump.dmp (152219648 bytes in 4 secs, 36.26 MB/s)
+```
