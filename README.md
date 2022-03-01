@@ -53,7 +53,7 @@ To use the script you need to connect to the database with the SQLcl first. Then
  `-m` or `--move`      - delete source file after the transfer  
  `-o` or `--overwrite` - overwrite local file if it exists
 
-examples:
+#### examples:
 ```
 C:\>sql /nolog
 SQLcl: Release 21.4 Production on Tue Mar 01 21:28:27 2022
