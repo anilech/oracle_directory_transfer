@@ -56,7 +56,7 @@ To use the script you need to connect to the database with the SQLcl first. Then
 #### examples:
 ```
 C:\>sql /nolog
-SQLcl: Release 21.4 Production on Tue Mar 01 21:28:27 2022
+SQLcl: Release 21.4 Production
 
 Copyright (c) 1982, 2022, Oracle.  All rights reserved.
 
