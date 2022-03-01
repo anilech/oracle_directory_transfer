@@ -1,7 +1,7 @@
 # oracle_directory_transfer
 #### uploads or downloads files to/from oracle database directory
 * [ora_dir_transfer.ps1](#powershell-script-ora_dir_transferps1)
-* [ora_dir_transfer.ps1](#powershell-script-ora_dir_transferps1)
+* [sqlcl_ora_dir_download.js](#sqlcl-script-sqlcl_ora_dir_downloadjs)
 
 Sometimes you may need to copy files from or to the Oracle directory.
 It is easy when you have direct access to the database server's file system.
@@ -46,7 +46,8 @@ It also runs javascript natively, so it is possible to create quite powerfull sc
 The [sqlcl_ora_dir_download.js](https://github.com/anilech/oracle_directory_transfer/blob/f8931b5d059b79015950ef79ff66080c8c89390f/sqlcl_ora_dir_download.js)
 script works in a download-mode only, but it doesn't require the UTL_FILE's grant.
 
-To use the script you need to connect to the database with the SQLcl first. Then execute it with the `SCRIPT` command. Options are:
+To use the script you need to connect to the database with the SQLcl first. Then execute it with the `SCRIPT` command.
+#### Parameters are:
  `-d` or `--directory` - oracle directory to download from  
  `-f` or `--file`      - filename to download  
  `-m` or `--move`      - delete source file after the transfer  
