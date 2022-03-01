@@ -68,7 +68,7 @@ OK: dump.dmp (152219648 bytes in 3.9 secs, 36.83 MB/s)
 SQL> exit
 ```
 
-It is impossible to run it from command line using standard `@` option. So if you need to run it that way, you can use pipe:
+It is impossible to run it from command line using the standard `@` option. So if you need to run it that way, you can use pipe:
 ```
 C:\>echo script sqlcl_ora_dir_download.js -d ORADIR -f dump.dmp -o | sql -l -s usr/pwd@db
 
