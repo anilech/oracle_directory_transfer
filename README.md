@@ -42,7 +42,7 @@ Optional parameters are:
 
 ### sqlcl script: sqlcl_ora_dir_download.js
 The [sqlcl](https://www.oracle.com/database/technologies/appdev/sqlcl.html) is the new fat sqlplus written in java, therefore it supports a bunch of platforms.
-It also runs javascript natively, so it is possible to create quite powerfull scripts.
+It also runs javascript natively, so it is possible to execute quite powerfull scripts with it.
 The [sqlcl_ora_dir_download.js](https://github.com/anilech/oracle_directory_transfer/blob/f8931b5d059b79015950ef79ff66080c8c89390f/sqlcl_ora_dir_download.js)
 script works in a download-mode only, but it doesn't require the UTL_FILE's grant.
 
