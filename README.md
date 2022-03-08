@@ -1,3 +1,4 @@
+![kdpv](https://anile.ch/assets/rosenbauer.jpg)
 # oracle_directory_transfer
 #### uploads or downloads files to/from oracle database directory
 * [ora_dir_transfer.ps1](#powershell-script-ora_dir_transferps1)
